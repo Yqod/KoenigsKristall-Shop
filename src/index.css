@@ -12,12 +12,10 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-.container{
-  max-width: 100%;
-  margin: 0 auto;
-  background:#FFF
-  
+html, body {
+  margin: 0;
+  padding: 0;
+  background:#E6E6FA;
 }
 .header {
   width: 100vw;
@@ -37,7 +35,8 @@
   padding-top: 35px;
   background-color: #E6E6FA;
   position: relative;
-  
+  border-bottom: #242424 2px solid;
+
 }
 
 .headerLogo {
@@ -85,7 +84,7 @@
   justify-content: center;
   background:
     linear-gradient(180deg,rgba(0,0,0,0.35) 0%,rgba(0,0,0,0.15) 100%),
-    url("/images/homePicture.jpg") center/cover no-repeat;
+    url("images/homePicture.jpg") center/cover no-repeat;
   background-position: center 30%; /* verschiebt das Bild nach oben/unten */
   background-size: 120%; 
   box-shadow: 0 4px 24px rgba(0,0,0,0.12);

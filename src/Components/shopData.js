@@ -21,28 +21,28 @@ const shopData = [
         image: "/images/product3.jpg"
     },
      {
-        id: 1,
-        title: "Product 1",
+        id: 4,
+        title: "Product ",
         description:"Description for Product 1",
         price: 29.99,
         image: "/images/product1.jpg"
     },
     {
-        id: 2,
+        id: 5,
         title: "Product 2",
         description:"Description for Product 2",
         price: 39.99,
         image: "/images/product2.jpg"
     },
      {
-        id: 1,
+        id: 5,
         title: "Product 1",
         description:"Description for Product 1",
         price: 29.99,
         image: "/images/product1.jpg"
     },
     {
-        id: 2,
+        id: 7,
         title: "Product 2",
         description:"Description for Product 2",
         price: 39.99,
