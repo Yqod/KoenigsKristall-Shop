@@ -9,11 +9,11 @@ function ShoppingCart({ cartItems, onRemoveFromCart }) {
       ) : (
         <>
           <ul>
-            {cartItems.map((item) => (
-              <li key={item.id}>
+            {cartItems.map((item, idx) => (
+              <li key={idx}>
                 {item.title} – {item.price} €
                 <button
-                  onClick={() => onRemoveFromCart(item.id)}
+                  onClick={() => onRemoveFromCart(idx)}
                   style={{ marginLeft: "10px" }}
                 >
                   Entfernen

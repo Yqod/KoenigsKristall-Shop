@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-function Header(){
+function Header({ cartCount, onCartClick }) {
     return(
         <header className="header">
             <img className="headerLogo" src="https://raw.githubusercontent.com/DevTides/react-hooks-course/main/src/assets/logo.png" alt="logo" />
@@ -10,6 +10,17 @@ function Header(){
                 <Link to="/shop" className="Shop">Shop</Link> |{" "}
                 <Link to="/about" className="About">Über mich</Link> |{" "}
                 <Link to="/info" className="Info">Info</Link>
+                 {cartCount > 0 && (
+          <span
+            className="cartIcon"
+            style={{ marginLeft: "20px", cursor: "pointer" }}
+            onClick={onCartClick}
+            title="Warenkorb anzeigen"
+          >
+            🛒
+            <span className="cartCount">{cartCount}</span>
+          </span>
+        )}
             </nav>
         </header>
     )
