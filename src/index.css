@@ -1,0 +1,133 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif, Title Hero;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container{
+  max-width: 100%;
+  margin: 0 auto;
+  background:#FFF
+  
+}
+.header {
+  width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  margin-bottom: 0px ;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 35px;
+  padding-top: 35px;
+  background-color: #E6E6FA;
+  position: relative;
+  
+}
+
+.headerLogo {
+  height: 48px;
+  width: auto;
+}
+
+.websiteTitle {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FFF;
+  text-align: center;
+  font-family: "Playfair Display";
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: -1.44px;
+  margin: 0;
+  padding-left: 200px
+}
+
+.navHeader {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  color: #242424;
+}
+.heroSection {
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  min-height: 220px;
+  max-height: 340px;
+  height: 32vw; /* Banner-Höhe passt sich an die Breite an */
+  box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    linear-gradient(180deg,rgba(0,0,0,0.35) 0%,rgba(0,0,0,0.15) 100%),
+    url("/images/homePicture.jpg") center/cover no-repeat;
+  background-position: center 30%; /* verschiebt das Bild nach oben/unten */
+  background-size: 120%; 
+  box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+  border-radius: 0;
+  padding: 0;
+}
+
+.heroTitle {
+  color: #fff;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+  text-align: center;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.heroSubtitle {
+  color: #fff;
+  font-size: 1.2rem;
+  margin-top: 14px;
+  text-align: center;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+.shopGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 120px; /* Abstand zwischen den Cards */
+  margin-top: 32px;
+  margin-top: 100px;
+  
+}
+
+.shopCard {
+  background: #fff;
+  color:#242424;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  width: 260px; /* feste Breite für jede Card */
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
