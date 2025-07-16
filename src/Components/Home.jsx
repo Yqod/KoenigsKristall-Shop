@@ -8,7 +8,18 @@ function Home() {
         </div>
       </div>
       <div className="homeInfo">
-        <p>Finde deinen persönlichen Kristall und bringe Harmonie in dein Leben.</p>
+       <div className="homeContainer1">
+        <p className="homeInfoP1">Persönliche Kristallberatung</p>
+        <img src="images/berater.png" alt="Beratung"></img>
+       </div>
+       <div className="homeContainer2">
+        <p className="homeInfoP2">Kristall Shop</p>
+        <img src="images/shopLogo.png" alt="Shop"></img>
+       </div>
+       <div className="homeContainer3">
+        <p className="homeInfoP3">Kristallbibliothek</p>
+        <img src="images/bibliothek.png" alt="Bibliothek"></img>
+       </div>
       </div>
     </div>
   );

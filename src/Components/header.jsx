@@ -6,10 +6,10 @@ function Header({ cartCount, onCartClick }) {
             <img className="headerLogo" src="https://raw.githubusercontent.com/DevTides/react-hooks-course/main/src/assets/logo.png" alt="logo" />
             <h1 className="websiteTitle">Koenigskristall</h1>
             <nav className="navHeader">
-                <Link  to="/" className="Startseite">Startseite</Link> |{" "}
-                <Link to="/shop" className="Shop">Shop</Link> |{" "}
-                <Link to="/about" className="About">Über mich</Link> |{" "}
-                <Link to="/info" className="Info">Info</Link>
+                <Link  to="/" className="Startseite">Startseite</Link> {" "}
+                <Link to="/shop" className="Shop">Shop</Link> {" "}
+                <Link to="/about" className="About">Über mich</Link> {" "}
+                <Link to="/info" className="Info">Bibliothek</Link>
                  {cartCount > 0 && (
           <span
             className="cartIcon"

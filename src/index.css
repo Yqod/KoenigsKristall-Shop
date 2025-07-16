@@ -15,14 +15,16 @@
 html, body {
   margin: 0;
   padding: 0;
-  background:#E6E6FA;
+  background:#fee4e8;
+  overflow-x:hidden;
+  width: 100%;
 }
 .header {
-  width: 100vw;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
+  width: 100%;
+  left: 0;
+  right: 0;
+  margin-left: 0;
+  margin-right: 0;
   box-sizing: border-box;
   display: flex;
   align-items: center;
@@ -33,9 +35,16 @@ html, body {
   padding-right: 20px;
   padding-bottom: 35px;
   padding-top: 35px;
-  background-color: #E6E6FA;
+  background-color: #feecec;
   position: relative;
   border-bottom: #242424 2px solid;
+  z-index: 100;
+  background-color:rgba(224, 224, 243, 0); 
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px); /* Für Safari Support */
+  border: none;
+  
+  
 
 }
 
@@ -58,25 +67,39 @@ html, body {
   line-height: 40px;
   letter-spacing: -1.44px;
   margin: 0;
-  padding-left: 200px
+  padding-left: 280px
 }
 
 .navHeader {
   display: flex;
   align-items: center;
-  gap: 17px;
+  gap: 24px;
   color: #242424;
+  font-size: 16px;
+  font-weight: 500;
 }
+.navHeader a {
+  color: #f4f4f4;
+  text-decoration: none;
+  transition: color 0.2s;
+  text-shadow: 0 1px 2px rgba(255,255,255,0.3);
+  font-weight: bold;
+  -webkit-text-stroke: 0.2px #242424; /* Umriss hinzufügen */
+
+}
+
 .heroSection {
   position: relative;
-  width: 100vw;
+  width: 100%;
+  height: 100vh;
   left: 50%;
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
+  margin-top: -60px; /* Negativer Margin um unter den Header zu rutschen */
   min-height: 220px;
-  max-height: 340px;
-  height: 32vw; 
+  max-height: 600px;
+  height: 32vw;
   box-sizing: border-box;
   overflow: hidden;
   display: flex;
@@ -86,10 +109,13 @@ html, body {
     linear-gradient(180deg,rgba(0,0,0,0.35) 0%,rgba(0,0,0,0.15) 100%),
     url("images/homePicture.jpg") center/cover no-repeat;
   background-position: center 30%;
-  background-size: 120%; 
+  background-size: 120%;
   box-shadow: 0 4px 24px rgba(0,0,0,0.12);
   border-radius: 0;
-  padding: 0;
+  padding: 60px 0 0 0; /* Padding-top um den Header-Bereich auszugleichen */
+
+ 
+  
 }
 
 .heroTitle {
@@ -108,14 +134,48 @@ html, body {
   text-align: center;
   text-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
+
+.homeInfo {
+  width: 100%;
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: row;  /* Container nebeneinander */
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 40px;
+}
+
 .shopGrid {
+  position: relative;       /* NEU */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 120px; /* Abstand zwischen den Cards */
-  margin-top: 32px;
+  gap: 120px;
   margin-top: 100px;
-  
+}
+.homeContainer1, .homeContainer2, .homeContainer3 {
+  display: flex;
+  flex-direction: column;  /* Bild oben, Text unten */
+  align-items: center;
+  width: 300px;           /* Feste Breite für jeden Container */
+  gap: 20px;             /* Abstand zwischen Bild und Text */
+}
+
+/* Style für die Bilder in den Containern */
+.homeContainer1 img, .homeContainer2 img, .homeContainer3 img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+ 
+}
+
+/* Style für die Texte */
+.homeInfoP1, .homeInfoP2, .homeInfoP3 {
+  margin: 0;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #242424;
 }
 
 .shopCard {
@@ -125,11 +185,32 @@ html, body {
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
   width: 260px; /* feste Breite für jede Card */
-  padding: 16px;
+  padding: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
+.CardContent h2,
+.CardContent p {
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+.CardContent h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #242424;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  text-align: center; /* zentriert den Text */
+}
+.CardContent p {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
 .cartOverlay {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
@@ -147,4 +228,116 @@ html, body {
   max-width: 90vw;
   box-shadow: 0 8px 32px rgba(0,0,0,0.2);
   position: relative;
+}
+.productImage {
+  width: 100%;
+  height: 180px;         /* oder eine andere feste Höhe */
+  object-fit: cover;     /* Bild füllt den Bereich, bleibt aber im Seitenverhältnis */
+  border-radius: 8px 8px 0 0;
+  display: block;
+}
+.categoryCard {
+  cursor: pointer;
+  padding: 40px;
+  margin: 20px;
+  background: #f5f5f5;
+  border-radius: 12px;
+  font-size: 1.3rem;
+  text-align: center;
+  font-weight: bold;
+  min-width: 200px;
+  height: 38px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: center
+  ;
+}
+
+.categoryCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.categoryCard span {
+  position: relative;
+  z-index: 2;
+  color: #242424;
+  transition: color 0.3s ease;
+}
+
+/* Spezifische Bilder für jede Kategorie */
+.categoryCard[data-category="Bergkristall"]::before {
+  background-image: url('/images/BergkristallRoh.JPEG');
+}
+
+.categoryCard[data-category="Amethyst"]::before {
+  background-image: url('/images/product2.jpg');
+}
+
+.categoryCard[data-category="Rohsteine"]::before {
+  background-image: url('/images/product1.jpg');
+}
+
+.categoryCard[data-category="MarkoStein"]::before {
+  background-image: url('/images/product1.jpg');
+}
+
+.categoryCard:hover::before {
+  opacity: 0.6;
+}
+
+.categoryCard:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  background: #e0e0ff;
+}
+
+.categoryCard:hover span {
+  color: #400152;
+  font-weight: bold;
+}
+
+.backButton {
+  background: #e0e0ff;
+  color: #242424;
+  border: none;
+  border-radius: 4px;          /* kleiner radius */
+  padding: 6px 12px;          /* weniger padding */
+  margin: 10px;               /* einheitlicher margin */
+  font-size: 0.9rem;          /* kleinere schrift */
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+  position: absolute;         /* positionierung */
+  left: 0;                    /* ganz links */
+  top: -70px; 
+}
+.backButton:hover {
+  background: #c2c2fa;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+}
+.addToCartButton {
+  display: flex;
+  justify-content: center;
+  background: #400152;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
 }
