@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
 
+
 function Header({ cartCount, onCartClick }) {
     return(
         <header className="header">
-            <img className="headerLogo" src="https://raw.githubusercontent.com/DevTides/react-hooks-course/main/src/assets/logo.png" alt="logo" />
+            <img className="headerLogo" src="/images/crystalLogo.png" alt="logo" />
             <h1 className="websiteTitle">Koenigskristall</h1>
             <nav className="navHeader">
                 <Link  to="/" className="Startseite">Startseite</Link> {" "}

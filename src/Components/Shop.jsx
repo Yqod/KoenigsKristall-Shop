@@ -48,6 +48,7 @@ function Shop({ onAddToCart }) {
                 </button>
               </div>
             </div>
+            
           ))}
         </>
       )}

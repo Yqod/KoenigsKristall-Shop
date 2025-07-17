@@ -51,6 +51,8 @@ html, body {
 .headerLogo {
   height: 48px;
   width: auto;
+  margin-left: 50px;
+  margin-top: 16px
 }
 
 .websiteTitle {
@@ -151,7 +153,17 @@ html, body {
   flex-wrap: wrap;
   justify-content: center;
   gap: 6px;
-  margin-top: 110px;
+  margin-top: 13px;
+  margin-bottom: 13px;
+   background-image: linear-gradient(
+    rgba(254, 228, 232, 0.85), 
+    rgba(254, 228, 232, 0.85)
+  ), url('/images/homePicture.jpg');
+   background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+  padding: 40px 20px;
 }
 .homeContainer1, .homeContainer2, .homeContainer3 {
   display: flex;
@@ -180,35 +192,74 @@ html, body {
 
 .shopCard {
   background: #fff;
-  color:#242424;
+  color: #242424;
   border: 1px solid #e0e0e0;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-  width: 260px; /* feste Breite für jede Card */
-  padding: 10px;
+  width: 260px;
+  height: 400px; /* Feste Höhe */
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  position: relative; /* Für absolute Positionierung des Buttons */
+  margin-top: 40px;
+  margin-left: 20px;
+}
+
+.CardContent {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 1px;
+  padding-bottom: 60px; /* Platz für den Button */
+}
+.productTitle {
+  margin: 14px 0 4px 0;  /* Reduzierte Margins */
+  font-size: 1.3rem;
+  text-align: center;
 }
 
-.CardContent h2,
-.CardContent p {
-  margin-top: 6px;
-  margin-bottom: 6px;
-}
-.CardContent h2 {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #242424;
-  margin-bottom: 0;
-  padding-bottom: 0;
-  text-align: center; /* zentriert den Text */
-}
-.CardContent p {
+.productDescription {
+  margin: 10 0 4px 0;    /* Reduzierte Margins */
+  text-align: center;
   font-size: 0.9rem;
   color: #666;
-  margin-bottom: 12px;
+}
+
+.productPrice {
+  position: absolute;
+  bottom: 60px; /* 60px vom unteren Rand - direkt über dem Button */
+  left: 0;
+  right: 0;
   text-align: center;
+  margin: 0;
+  padding: 10px 0;
+  font-weight: bold;
+  color: #400152;
+  font-size: 1.1rem;
+}
+
+.addToCartButton {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  right: 15px;
+  width: calc(100% - 30px);
+  background: #400152;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 0,7rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.addToCartButton:hover {
+  background: #500163;
+  box-shadow: 0 4px 12px rgba(64,1,82,0.2);
 }
 
 .cartOverlay {
@@ -293,8 +344,8 @@ html, body {
   background-image: url('/images/product1.jpg');
 }
 
-.categoryCard[data-category="MarkoStein"]::before {
-  background-image: url('/images/product1.jpg');
+.categoryCard[data-category="Citrin"]::before {
+  background-image: url('/images/CitrinRoh.JPEG');
 }
 
 .categoryCard:hover::before {
@@ -307,7 +358,7 @@ html, body {
 }
 
 .categoryCard:hover span {
-  color: #400152;
+  color: #f0edf1;
   font-weight: bold;
 }
 
@@ -317,7 +368,8 @@ html, body {
   border: none;
   border-radius: 4px;          /* kleiner radius */
   padding: 6px 12px;          /* weniger padding */
-  margin: 10px;               /* einheitlicher margin */
+  margin: 10px; 
+  margin-top: 100px;              /* einheitlicher margin */
   font-size: 0.9rem;          /* kleinere schrift */
   font-weight: 500;
   cursor: pointer;
@@ -331,17 +383,179 @@ html, body {
   background: #c2c2fa;
   box-shadow: 0 4px 16px rgba(0,0,0,0.10);
 }
-.addToCartButton {
-  display: flex;
-  justify-content: center;
-  background: #400152;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  padding: 10px 20px;
-  font-size: 1rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background 0.2s, box-shadow 0.2s;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+
+
+
+
+
+
+/* Media Queries für Responsive Design */
+@media screen and (max-width: 768px) {
+  /* Header Anpassungen */
+  .header {
+    padding: 10px;
+    flex-direction: column;
+    height: auto;
+  }
+
+  .headerLogo {
+    margin: 10px auto;
+    height: 36px;
+  }
+
+  .websiteTitle {
+    font-size: 32px;
+    padding-left: 0;
+    margin: 10px 0;
+  }
+
+  .navHeader {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 10px;
+  }
+
+  /* Hero Section Anpassungen */
+  .heroSection {
+    margin-top: 0;
+    height: 50vh;
+    padding: 20px;
+  }
+
+  .heroTitle {
+    font-size: 1.8rem;
+  }
+
+  .heroSubtitle {
+    font-size: 1rem;
+  }
+
+  /* Home Info Anpassungen */
+  .homeInfo {
+    flex-direction: column;
+    padding: 30px 10px;
+    gap: 30px;
+  }
+
+  .homeContainer1, .homeContainer2, .homeContainer3 {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+ .shopGrid {
+    padding: 20px 5px;
+    gap: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: row;
+  }
+
+    .shopCard {
+    flex: 0 0 calc(50% - 15px); /* Wichtig: flex-basis 50% minus gap */
+    margin: 0;                   /* Reset margins */
+    height: 360px;
+    min-height: 0;
+    padding: 10px;
+    
+  }
+ .productImage {
+    height: 130px;
+  }
+
+  .productTitle {
+    font-size: 1rem;
+    margin: 8px 0 4px 0;
+  }
+
+  .productDescription {
+    font-size: 0.8rem;
+    margin: 0 0 4px 0;
+  }
+
+  .productPrice {
+    font-size: 1rem;
+  }
+
+  .addToCartButton {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+}
+
+  /* Cart Modal Anpassungen */
+  .cartModal {
+    width: 90%;
+    padding: 1rem;
+  }
+
+  /* Back Button Anpassungen */
+  .backButton {
+    position: static;
+    margin: 20px auto;
+    display: block;
+    width: calc(100% - 40px);
+  }
+
+  .categoryCard::before {
+    opacity: 0.8; /* Bild ist standardmäßig sichtbar */
+  }
+
+    .categoryCard {
+    cursor: pointer;
+    padding: 40px;
+    margin: 20px;
+    background: rgba(245, 245, 245, 0.8);
+    border-radius: 12px;
+    font-size: 1.3rem;
+    text-align: center;
+    font-weight: bold;
+    min-width: 180px;
+    max-width: 180px;
+    max-height: 200px;
+    height: 38px;
+  }
+
+  .categoryCard span {
+    color: #ffffff;
+    font-weight: bold;
+    text-shadow: 0 1px 2px rgba(255,255,255,0.8); /* Bessere Lesbarkeit */
+  }
+
+  /* Deaktiviere Hover-Effekte auf Mobile */
+  .categoryCard:hover::before {
+    opacity: 0.15; /* Gleiche Opazität wie Standard-Zustand */
+  }
+
+  .categoryCard:hover {
+    background: rgba(245, 245, 245, 0.8);
+  }
+
+  .categoryCard:hover span {
+    color: #242424;
+  }
+
+
+
+
+
+/* Für noch kleinere Geräte */
+@media screen and (max-width: 480px) {
+  .websiteTitle {
+    font-size: 40px;
+  }
+
+  .heroTitle {
+    font-size: 1.5rem;
+  }
+
+  .navHeader {
+    font-size: 14px;
+  }
+
+  .categoryCard {
+    min-width: 120px;
+    font-size: 0.9rem;
+  }
 }
