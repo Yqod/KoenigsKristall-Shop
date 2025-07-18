@@ -7,6 +7,12 @@ function Home() {
           <p className="heroSubtitle">Entdecke dich selbst</p>
         </div>
       </div>
+
+      <div className="homeText">
+        <h2 className="homeTextH2">Willkommen bei Koenigskristall</h2>
+        <p className="homeTextP">Schön dass ihr auf mein Herzensprojekt gestoßen seit, mit viel Liebe bringe ich euch das Thema Kristalle, und Persönlichkeitsentwicklung näher. Schaut euch gerne um </p>
+      </div>
+
       <div className="homeInfo">
        <div className="homeContainer1">
         <p className="homeInfoP1">Persönliche Kristallberatung</p>
