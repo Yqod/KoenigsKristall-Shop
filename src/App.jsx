@@ -6,6 +6,8 @@ import Shop from "./Components/Shop.jsx";
 import About from "./Components/About.jsx";
 import Info from "./Components/Info.jsx";
 import ShoppingCart from "./Components/shoppingCart.jsx";
+import SignIn from "./Components/SignIn.jsx";
+import SignUp from "./Components/SignUp.jsx";
 
 export default function App() {
   const [cartItems, setCartItems] = useState([]);
@@ -45,6 +47,8 @@ export default function App() {
       )}
 
       <Routes>
+        <Route path="signin" element={<SignIn />} />
+        <Route path="signup" element={<SignUp />} />
         <Route path="/" element={<Home />} />
         <Route
           path="/shop"

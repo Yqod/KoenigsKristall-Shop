@@ -9,8 +9,8 @@ function Home() {
       </div>
 
       <div className="homeText">
-        <h2 className="homeTextH2">Willkommen bei Koenigskristall</h2>
-        <p className="homeTextP">Schön dass ihr auf mein Herzensprojekt gestoßen seit, mit viel Liebe bringe ich euch das Thema Kristalle, und Persönlichkeitsentwicklung näher. Schaut euch gerne um </p>
+        <h2 className="homeTextH2">Herzlich Willkommen, <br/>auf deiner Reise, durch die magische Welt der Kristalle und Heilsteine.</h2>
+        <p className="homeTextP">Hier findest du Alles, was dein Kristallherz begehrt. Schau dich gerne um, auch du wirst dein Lieblingskristall finden.</p>
       </div>
 
       <div className="homeInfo">
