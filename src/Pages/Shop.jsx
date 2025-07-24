@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import shopData from "./shopData";
+import shopData from "../Components/shopData.js";
 
 function Shop({ onAddToCart }) {
   // Alle Kategorien extrahieren (einzigartig)

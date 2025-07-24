@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./Components/header.jsx";
-import Home from "./Components/Home.jsx";
-import Shop from "./Components/Shop.jsx";
-import About from "./Components/About.jsx";
-import Info from "./Components/Info.jsx";
+import Home from "./Pages/Home.jsx";
+import Shop from "./Pages/Shop.jsx";
+import About from "./Pages/About.jsx";
+import Info from "./Pages/Info.jsx";
 import ShoppingCart from "./Components/shoppingCart.jsx";
-import SignIn from "./Components/SignIn.jsx";
-import SignUp from "./Components/SignUp.jsx";
+import SignIn from "./Pages/SignIn.jsx";
+import SignUp from "./Pages/SignUp.jsx";
 
 export default function App() {
   const [cartItems, setCartItems] = useState([]);

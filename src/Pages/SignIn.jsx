@@ -6,7 +6,8 @@ function SignIn() {
         const formData = new FormData(event.target);
         const email = formData.get("email");
         const password = formData.get("password");
-        // You can handle login logic here kozato
+        // You can handle login logic here
+        console.log("Email:", email, "Password:", password);
     };
 
     return (
