@@ -122,6 +122,85 @@ html, body {
 .signUpForm{
   margin-bottom: 90px;
 }
+.inputGroup {
+  margin-bottom: 20px;
+}
+.inputLabel {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #400152;
+  font-size: 1rem;
+}
+
+.inputField {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+}
+.inputField.error {
+  border-color: #dc3545 !important;
+  box-shadow: 0 0 0 2px rgba(220, 53, 69, 0.2);
+}
+.errorMessage {
+  color: #dc3545;
+  font-size: 14px;
+  display: block;
+  margin-top: 5px;
+  font-weight: 500;
+}
+
+
+
+
+.inputField:focus {
+  outline: none;
+  border-color: #400152;
+}
+
+/* Password Strength Indicator */
+.passwordStrength {
+  margin-top: 5px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.passwordStrength.weak {
+  color: #ffc107;
+}
+
+.passwordStrength.strong {
+  color: #28a745;
+}
+
+/* Submit Button Styles - DIESE KLASSE FEHLT! */
+.signUpButton {
+  width: 100%;
+  padding: 14px;
+  background-color: #400152;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+.signUpButton:hover {
+  background-color: #2d003a;
+}
+
+.signUpButton:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
 
 
 /* HERO SECTION */
