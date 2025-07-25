@@ -2,7 +2,8 @@ import {useState} from "react";
 
 function SignUp() {
     const [formData, setFormData] = useState({
-        name: "",
+        firstName: "",
+        lastName: "",
         email: "",
         password: ""
     });
@@ -28,8 +29,8 @@ function SignUp() {
     const validateForm = () => {
         const newErrors = {};
 
-        if (!formData.name.trim()) {
-            newErrors.name = "Name ist erforderlich";
+        if (!formData.firstName.trim() || !formData.lastName.trim()) {
+            newErrors.firstName = "Vorname und Nachname sind erforderlich";
         }
 
         if (!formData.email.trim()) {
@@ -48,21 +49,55 @@ function SignUp() {
         return Object.keys(newErrors).length === 0;
     };
 
-    const handleSubmit = (e) => {
+     const handleSubmit = async (e) => {
         e.preventDefault();
         
         if (!validateForm()) {
-            console.log("Form validation failed:", errors); // for testing Kozato, you can delete later //
             return;
         }
 
         setIsLoading(true);
-         
-        const {name, email, password} = formData;
-        console.log("Form submitted:", {name, email, password}); // for testing Kozato, you can delete later //
+        
+        const { firstName, lastName, email, password } = formData;
 
+        try {
+            
+            const response = await fetch("http://ec2-18-216-56-107.us-east-2.compute.amazonaws.com/api/auth/register", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    email,
+                    password,
+                    firstName,
+                    lastName
+                })
+            });
+
+            if (!response.ok) {
+                throw new Error("Fehler bei der Registrierung");
+            }
+
+            const data = await response.json();
+            console.log("Registrierung erfolgreich:", data);
+            alert("Du wurdest erfolgreich registriert!");
+            
+           
+            setFormData({
+                firstName: "",
+                lastName: "",
+                email: "",
+                password: ""
+            });
+
+        } catch (error) {
+            console.error("Fehler:", error);
+            alert("Registrierung fehlgeschlagen. Bitte versuche es erneut.");
+        } finally {
+            setIsLoading(false);
+        }
     };
-    
 
     return (
     <>
@@ -75,20 +110,39 @@ function SignUp() {
                         <h2 className="signUpTitle">Registrieren</h2>
                          <form className="signUpForm" onSubmit={handleSubmit}>
                             <div className="inputGroup" >
-                                <label htmlFor="name" className="inputLabel">Name:</label>
+                                <label htmlFor="firstName" className="inputLabel">Vorname</label>
                                     <input 
                                         type="text" 
-                                        id="name" 
-                                        name="name" 
+                                        id="firstName" 
+                                        name="firstName" 
                                         required 
-                                        placeholder="dein Name"
-                                        value={formData.name}
+                                        placeholder="dein Vorname"
+                                        value={formData.firstName}
                                         onChange={handleInputChange}
-                                        className={`inputField ${errors.name ? 'error' : ''}`}
+                                        className={`inputField ${errors.firstName ? 'error' : ''}`}
                                     />
-                                    {errors.name && (
+                                    {errors.firstName && (
                                         <span className="errorMessage">
-                                            {errors.name}
+                                            {errors.firstName}
+                                        </span>
+                            )}
+                            </div>
+
+                            <div className="inputGroup" >
+                                <label htmlFor="lastName" className="inputLabel">Nachname:</label>
+                                    <input 
+                                        type="text" 
+                                        id="lastName" 
+                                        name="lastName" 
+                                        required 
+                                        placeholder="dein Nachname"
+                                        value={formData.lastName}
+                                        onChange={handleInputChange}
+                                        className={`inputField ${errors.lastName ? 'error' : ''}`}
+                                    />
+                                    {errors.lastName && (
+                                        <span className="errorMessage">
+                                            {errors.lastName}
                                         </span>
                             )}
                             </div>
